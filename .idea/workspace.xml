@@ -2,51 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6e58763-44b7-4b13-96ff-f940624b49af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/FBSDKCoreKit" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/FBSDKLoginKit" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKAccessTokenCacheV4.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKBridgeAPICrypto.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKBridgeAPIProtocol.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKBridgeAPIProtocolNativeV1.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKBridgeAPIProtocolWebV1.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKButton.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKConstants.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKCopying.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKError.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKGraphRequestBody.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKGraphRequestMetadata.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKMacros.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKProfile.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKSettings.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKURLConnection.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Headers/FBSDKUtility.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/PrivateHeaders/FBSDKWebDialogView.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Info.plist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Info.plist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/TourChamp_ios_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKCoreKit.framework/Modules/module.modulemap" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FBSDKLoginKit.framework/Modules/module.modulemap" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iOS/Base.lproj/LaunchScreen.xib" afterPath="$PROJECT_DIR$/iOS/Base.lproj/LaunchScreen.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challenge_list.js" afterPath="$PROJECT_DIR$/challenge_list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challenge_show.js" afterPath="$PROJECT_DIR$/challenge_show.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fb_login.js" afterPath="$PROJECT_DIR$/fb_login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/global.js" afterPath="$PROJECT_DIR$/lib/global.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.ios.js" afterPath="$PROJECT_DIR$/index.ios.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme_list.js" afterPath="$PROJECT_DIR$/theme_list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TourChamp_ios.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,38 +34,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="342">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fb_login.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fb_login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fb_login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27099842" vertical-offset="1805" max-vertical-offset="2831">
-              <caret line="104" column="24" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2192" max-vertical-offset="3002">
+              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ios.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.ios.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.ios.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="969">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1434109878000" expanded="true" signature="436:515" placeholder="{...}" />
-                <marker date="1434109878000" expanded="true" signature="542:626" placeholder="{...}" />
-                <marker date="1434109878000" expanded="true" signature="682:814" placeholder="{...}" />
-                <marker date="1434109878000" expanded="true" signature="692:780" placeholder="{&quot;color&quot;: 'black'...}" />
-                <marker date="1434109878000" expanded="true" signature="795:812" placeholder="{&quot;flex&quot;: 1...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.4452555" vertical-offset="444" max-vertical-offset="1083">
+              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme_list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme_list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="2660">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="challenge_list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/challenge_list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2622">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="challenge_show.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/challenge_show.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2394">
+              <caret line="12" column="28" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/global.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1786">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,6 +103,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/iOS/Base.lproj/LaunchScreen.xib" />
+        <option value="$PROJECT_DIR$/fb_login.js" />
+        <option value="$PROJECT_DIR$/theme_list.js" />
+        <option value="$PROJECT_DIR$/challenge_list.js" />
+        <option value="$PROJECT_DIR$/challenge_show.js" />
+        <option value="$PROJECT_DIR$/lib/global.js" />
+        <option value="$PROJECT_DIR$/index.ios.js" />
       </list>
     </option>
   </component>
@@ -146,7 +140,7 @@
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
     </navigator>
     <panes>
@@ -168,13 +162,169 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-native" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-native" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-native" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-native" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iOS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TourChamp_ios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iOS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Base.lproj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-native-login" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="JavaScriptLanguageLevel" value="JSX" />
   </component>
@@ -201,6 +351,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3312977" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -211,7 +362,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -237,37 +387,82 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.ios.js">
+    <entry file="file://$PROJECT_DIR$/iOS/Base.lproj/LaunchScreen.xib">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1434109878000" expanded="true" signature="436:515" placeholder="{...}" />
-            <marker date="1434109878000" expanded="true" signature="542:626" placeholder="{...}" />
-            <marker date="1434109878000" expanded="true" signature="682:814" placeholder="{...}" />
-            <marker date="1434109878000" expanded="true" signature="692:780" placeholder="{&quot;color&quot;: 'black'...}" />
-            <marker date="1434109878000" expanded="true" signature="795:812" placeholder="{&quot;flex&quot;: 1...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="242" max-vertical-offset="912">
+          <caret line="20" column="184" selection-start-line="20" selection-start-column="184" selection-end-line="20" selection-end-column="184" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native/node_modules/ws/build/bufferutil.target.mk">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33246753" vertical-offset="708" max-vertical-offset="3078">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="342">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.4464752" vertical-offset="0" max-vertical-offset="383">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fb_login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27099842" vertical-offset="1805" max-vertical-offset="2831">
-          <caret line="104" column="24" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2173" max-vertical-offset="3002">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challenge_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2622">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1786">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challenge_show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2394">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="2660">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.ios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4452555" vertical-offset="444" max-vertical-offset="1083">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
           <folding />
         </state>
       </provider>

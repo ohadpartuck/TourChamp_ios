@@ -1,11 +1,7 @@
 'use strict';
 
 var ChallengeShow = require('./challenge_show');
-var Global = require('./lib/global');
-var Parse = require('parse').Parse;
-Parse.initialize("mWYkCl2OixqTNVogAN8QwSWJvz7R0ll7hWYyJs3P", "YBIy6ufbozlkSeGbbVzTQUOBUF20IhmYuGuPQjFx");
 
-var React = require('react-native');
 var {
     StyleSheet,
     Image,

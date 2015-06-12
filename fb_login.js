@@ -1,5 +1,8 @@
 'use strict';
-var React = require('react-native');
+//var React = require('react-native');
+//var Parse = require('parse').Parse;
+//Parse.initialize("mWYkCl2OixqTNVogAN8QwSWJvz7R0ll7hWYyJs3P", "YBIy6ufbozlkSeGbbVzTQUOBUF20IhmYuGuPQjFx");
+
 var {
   AppRegistry,
   StyleSheet,
@@ -121,6 +124,12 @@ var FacebookLogin = React.createClass({
         this.setState({result: error});
       } else {
         this.setState({result: info});
+        var url = `https://graph.facebook.com/v2.3/${info.userId}?access_token=${info.token}` +
+            '&fields=name,email,picture&format=json';
+        fetch(url).then(function(response){
+          console.log('facebook response');
+          console.log(response);
+        })
       }
     });
   },

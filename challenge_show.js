@@ -1,13 +1,5 @@
 'use strict';
 
-var Global = require('./lib/global'),
-    React = require('react-native'),
-    Parse = require('parse').Parse;
-
-
-Parse.initialize("mWYkCl2OixqTNVogAN8QwSWJvz7R0ll7hWYyJs3P", "YBIy6ufbozlkSeGbbVzTQUOBUF20IhmYuGuPQjFx");
-
-
 var {
     StyleSheet,
     Image,

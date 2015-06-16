@@ -4,13 +4,15 @@
 //Parse.initialize("mWYkCl2OixqTNVogAN8QwSWJvz7R0ll7hWYyJs3P", "YBIy6ufbozlkSeGbbVzTQUOBUF20IhmYuGuPQjFx");
 
 var {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  TouchableHighlight
-} = React;
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    TouchableHighlight,
+    TouchableOpacity,
+    } = React;
 
+var LinearGradient = require('react-native-linear-gradient');
 
 var styles = StyleSheet.create({
   container: {
@@ -119,33 +121,82 @@ var FacebookLogin = React.createClass({
   },
 
   login() {
+    var that = this;
     FacebookLoginManager.newSession((error, info) => {
       if (error) {
         this.setState({result: error});
       } else {
-        this.setState({result: info});
         var url = `https://graph.facebook.com/v2.3/${info.userId}?access_token=${info.token}` +
             '&fields=name,email,picture&format=json';
+
         fetch(url).then(function(response){
-          console.log('facebook response');
-          console.log(response);
-        })
+          that.handle_get_user_login(response);
+        });
       }
+    });
+
+  },
+
+  handle_get_user_login(response) {
+    var that = this,
+        fb_user = JSON.parse(response._bodyText),
+        password  =  fb_user.id + '123';
+
+    var u = new Parse.User({
+      username: fb_user.id,
+      password: password,
+      photo_url: "http://graph.facebook.com/"+fb_user.id+"/picture?type=square",
+      displayName: fb_user.name,
+      email: fb_user.email
+    });
+
+    u.signUp().then(function(user) {
+      that.setState({result: 'sign up success'});
+    }, function(msg) {
+      if (that.user_existed(msg.message)) {
+        that.login_user(fb_user, password);
+      }else{
+        that.setState({result: 'sign up failure'});
+      }
+
     });
   },
 
+  login_user(fb_user, password){
+    var that = this;
+    Parse.User.logIn(fb_user.id, password).then(function(user) {
+      console.log('here in logged_in');
+      that.setState({result: 'logged_in'});
+    }, function(msg) {
+      that.setState({result: 'failure logged_id'});
+    });
+  },
+
+  user_existed(error_message){
+    return error_message.includes("already taken");
+  },
+
+//<TouchableOpacity onPress={this.login} style={ {padding:50, backgroundColor: 'black'}}>
+//  <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
+//    <Text style={styles.welcome}>
+//      Sign in with Facebook
+//    </Text>
+//  </LinearGradient>
+//</TouchableOpacity>
   render() {
+    console.log('here in fb_login render');
     return (
-      <View style={styles.container}>
-        <TouchableHighlight onPress={this.login}>
-          <Text style={styles.welcome}>
-            Facebook Login
+        <View style={styles.container}>
+           <TouchableHighlight onPress={this.login}>
+               <Text style={styles.welcome}>
+                   Facebook Login
+                 </Text>
+             </TouchableHighlight>
+
+          <Text style={styles.instructions}>
+            {this.state.result}
           </Text>
-        </TouchableHighlight>
-        <Text style={styles.instructions}>
-          {this.state.result}
-        </Text>
-      </View>
+        </View>
     );
   }
 });

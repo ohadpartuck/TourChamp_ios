@@ -126,9 +126,7 @@ class ThemeList extends Component {
 
         return ( <ScrollView>{spinner}</ScrollView>);
     }
-
 }
-
 
 module.exports = ThemeList;
 

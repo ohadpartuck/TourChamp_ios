@@ -79,7 +79,7 @@ class ChallengeShow extends Component {
             {rowHasChanged: (r1, r2) => r1.id !== r2.id});
         this.state = {
             isLoading: false,
-            dataSource: dataSource.cloneWithRows(this.props.challenge)
+            dataSource: dataSource.cloneWithRows(this.props.navigator.route.passProps.challenge)
         };
         this.setState({ stam: true
         }); // this will re call the render method
@@ -87,12 +87,12 @@ class ChallengeShow extends Component {
     }
 
     buttonClicked() {
-        Global.mark_challenge_completed(this.props.challenge);
+        Global.mark_challenge_completed(this.props.navigator.route.passProps.challenge);
     }
 
     render() {
 
-        var challenge = this.props.challenge.attributes;
+        var challenge = this.props.navigator.route.passProps.challenge.attributes;
 
         return (
             <ScrollView style={styles.container}>

@@ -14,6 +14,9 @@ window.Global = Global;
 
 var LoginScreen  = require('./fb_login');
 var LocalStorage = require('./Stores/LocalStorage');
+var UserInfoScreen = require('./Screens/UserInfoScreen');
+var ChallengeList = require('./challenge_list');
+var ChallengeShow = require('./challenge_show');
 var UserStore = require('./Stores/UserStore');
 var ThemeList  = require('./theme_list');
 
@@ -33,6 +36,7 @@ var TourChampIOs = React.createClass({
     },
 
     componentWillMount() {
+
         LocalStorage.bootstrap(() => this.setState({bootstrapped: true}));
     },
 
@@ -41,8 +45,13 @@ var TourChampIOs = React.createClass({
         switch (route.id) {
             case 'authenticate':
                 return <LoginScreen navigator={nav} />;
-            case 'user-info':
-                return <UserInfoScreen navigator={nav} />;
+            case 'theme_list':
+                return <ThemeList navigator={nav} />;
+            case 'challenge_list':
+                return <ChallengeList navigator={nav} />;
+            case 'challenge_show':
+                return <ChallengeShow navigator={nav} />;
+
             default:
                 return <View />;
         }
@@ -57,15 +66,20 @@ var TourChampIOs = React.createClass({
 
 
     render: function() {
-
+        var render_screen;
         console.log('here in index render');
 
         if (this.state.bootstrapped === false) {
             return <View />
         }
+        if (Global.is_signed_in()){
+            render_screen = 'theme_list';
+        }else{
+            render_screen = 'authenticate';
+        }
         return (
             <Navigator
-                initialRoute={{ id: 'authenticate'}}
+                initialRoute={{ id: render_screen}}
                 renderScene={this.renderScene}
                 configureScene={(route) => {
                     if (route.sceneConfig) {

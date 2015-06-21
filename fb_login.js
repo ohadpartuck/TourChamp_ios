@@ -166,7 +166,8 @@ var FacebookLogin = React.createClass({
     var that = this;
     Parse.User.logIn(fb_user.id, password).then(function(user) {
       console.log('here in logged_in');
-      that.setState({result: 'logged_in'});
+      tc.user = user.attributes;
+      that.setState({result: 'logged_in', user: user.attributes});
     }, function(msg) {
       that.setState({result: 'failure logged_id'});
     });
@@ -176,13 +177,6 @@ var FacebookLogin = React.createClass({
     return error_message.includes("already taken");
   },
 
-//<TouchableOpacity onPress={this.login} style={ {padding:50, backgroundColor: 'black'}}>
-//  <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
-//    <Text style={styles.welcome}>
-//      Sign in with Facebook
-//    </Text>
-//  </LinearGradient>
-//</TouchableOpacity>
   render() {
     console.log('here in fb_login render');
     return (

@@ -70,16 +70,17 @@ class ChallengeList extends Component {
                             {rowHasChanged: (r1, r2) => r1.id !== r2.id});
         this.state = {
             isLoading: false,
-            dataSource: dataSource.cloneWithRows(this.props.challenges)
+            dataSource: dataSource.cloneWithRows(this.props.navigator.route.passProps.challenges)
         };
         this.setState({ stam: true
                         }); // this will re call the render method
     }
 
     rowPressed(challenge_id) {
-        var challenge = this.props.challenges.filter(prop => prop.id === challenge_id)[0];
+        var challenge = this.props.navigator.route.passProps.challenges.filter(prop => prop.id === challenge_id)[0];
 
         this.props.navigator.push({
+            id: 'challenge_show',
             title: challenge.attributes.name + ' Challenge',
             component: ChallengeShow,
             passProps: {challenge: challenge}

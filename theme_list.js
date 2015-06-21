@@ -54,7 +54,14 @@ var styles = StyleSheet.create({
         padding: 15,
         margin: 2,
         borderRadius: 5
-    }
+    },
+    profilePicture: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        alignItems: 'center',
+        alignSelf: 'center',
+    },
 });
 
 class ThemeList extends Component {
@@ -74,7 +81,8 @@ class ThemeList extends Component {
     }
 
     handleChallengesForThemeResponse(theme, challenges){
-        this.props.navigator.push({
+            this.props.navigator.push({
+            id: 'challenge_list',
             title: "Challenges For " + theme.attributes.badge,
             component: ChallengeList,
             passProps: {theme: theme, challenges: challenges}
@@ -118,6 +126,13 @@ class ThemeList extends Component {
                 hidden='false'
                 size='large'/> ) :
             ( <View style={styles.container}>
+                <View style={styles.contentContainer}>
+                    <Image source={{uri: tc.user.avatar_url}}
+                        style={styles.profilePicture} />
+                    <Text style={styles.name}>
+                        {tc.user.displayName}
+                    </Text>
+                </View>
                 <Text style={styles.headline}>Badges to acheive near Tel Aviv</Text>
                 <ListView
                     dataSource={this.state.dataSource}

@@ -68,6 +68,12 @@ var styles = StyleSheet.create({
     mark_as_done_button_text: {
        color: 'white',
        fontSize: 18
+    },
+    completed_button: {
+        backgroundColor: '#5bc0de',
+        padding: 30,
+        borderRadius: 10,
+        marginBottom: 20
     }
 });
 
@@ -92,28 +98,40 @@ class ChallengeShow extends Component {
 
     render() {
 
-        var challenge = this.props.navigator.route.passProps.challenge.attributes;
+        var challenge_obj = this.props.navigator.route.passProps.challenge;
+        var challenge = challenge_obj.attributes;
+
+        var button;
+        if (Global.is_challenge_completed(challenge_obj.id)) {
+            button = <TouchableHighlight
+                style={styles.completed_button}>
+                <Text style={styles.mark_as_done_button_text}>Challenge Completed! ({challenge.points} points)</Text>
+            </TouchableHighlight>
+
+        }else{
+            button = <TouchableHighlight
+                style={styles.mark_as_done_button}
+                onPress={this.buttonClicked.bind(this)}>
+                <Text style={styles.mark_as_done_button_text}>Mark As Done! ({challenge.points} points)</Text>
+            </TouchableHighlight>
+        }
 
         return (
-            <ScrollView style={styles.container}>
+        <ScrollView style={styles.container}>
 
-                <View style={styles.challenge_container}>
-                    <Text style={styles.title}>{challenge.name}</Text>
-                    <Text style={styles.location}>{challenge.location}</Text>
-                    <Text style={styles.description}>{challenge.description}</Text>
+            <View style={styles.challenge_container}>
+                <Text style={styles.title}>{challenge.name}</Text>
+                <Text style={styles.location}>{challenge.location}</Text>
+                <Text style={styles.description}>{challenge.description}</Text>
 
-                    <Image style={styles.image}
-                        source={{uri: "http://lorempixel.com/400/400/?rnd="+Math.random()}} />
+                <Image style={styles.image}
+                    source={{uri: "http://lorempixel.com/400/400/?rnd="+Math.random()}} />
 
-                    <TouchableHighlight
-                        style={styles.mark_as_done_button}
-                        onPress={this.buttonClicked.bind(this)}>
-                        <Text style={styles.mark_as_done_button_text}>Mark As Done! ({challenge.points} points)</Text>
-                    </TouchableHighlight>
+                {button}
 
-                </View>
+            </View>
 
-            </ScrollView>
+        </ScrollView>
         );
     }
 }

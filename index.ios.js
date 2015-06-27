@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react-native');
+//var _ = require('underscore');
 var Parse = require('parse').Parse;
 Parse.initialize("mWYkCl2OixqTNVogAN8QwSWJvz7R0ll7hWYyJs3P", "YBIy6ufbozlkSeGbbVzTQUOBUF20IhmYuGuPQjFx");
 var tc = {};
@@ -9,6 +10,7 @@ var tc = {};
 window.React = React;
 window.Parse = Parse;
 window.tc = tc;
+//window._ = _;
 var Global = require('./lib/global');
 window.Global = Global;
 

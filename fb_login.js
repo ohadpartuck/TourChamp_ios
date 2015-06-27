@@ -167,6 +167,7 @@ var FacebookLogin = React.createClass({
     Parse.User.logIn(fb_user.id, password).then(function(user) {
       console.log('here in logged_in');
       tc.user = user.attributes;
+      //Global.setUser(user);
       that.setState({result: 'logged_in', user: user.attributes});
     }, function(msg) {
       that.setState({result: 'failure logged_id'});

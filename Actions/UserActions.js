@@ -14,12 +14,6 @@ module.exports = {
         FacebookApi.getUserInfo(info.userId, info.token);
       }
     });
-  },
+  }
 
-  signOut() {
-    dispatcher.handleViewAction({
-      actionType: UserConstants.SIGN_OUT,
-    });
-  },
-
-}
+};

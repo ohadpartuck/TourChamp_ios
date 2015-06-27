@@ -16,7 +16,7 @@ var {
 
 var styles = StyleSheet.create({
     headline: {
-      marginBottom: 0
+        marginBottom: 0
     },
     thumb: {
         width: 80,
@@ -69,6 +69,13 @@ class ThemeList extends Component {
     constructor(props) {
         super(props);
         Global.getAllThemes(this.handleResponse.bind(this));
+        if (undefined == tc.user){
+            Parse.User.current().fetch(
+                {success: function(user) {
+                    tc.user = user.attributes
+                }
+                })
+        }
         this.state = {
             isLoading: true
         };
@@ -81,7 +88,7 @@ class ThemeList extends Component {
     }
 
     handleChallengesForThemeResponse(theme, challenges){
-            this.props.navigator.push({
+        this.props.navigator.push({
             id: 'challenge_list',
             title: "Challenges For " + theme.attributes.badge,
             component: ChallengeList,
@@ -118,6 +125,12 @@ class ThemeList extends Component {
         this.props.themes = response;
     }
 
+    logOut(){
+        Parse.User.logOut();
+        // TODO go back to login page
+        this.setState({isLoading:  false});
+    }
+
     render() {
         console.log(this.state.isLoading);
 
@@ -132,6 +145,11 @@ class ThemeList extends Component {
                     <Text style={styles.name}>
                         {tc.user.displayName}
                     </Text>
+                    <TouchableHighlight onPress={this.logOut.bind(this)}>
+                        <Text style={styles.welcome}>
+                            Log out
+                        </Text>
+                    </TouchableHighlight>
                 </View>
                 <Text style={styles.headline}>Badges to acheive near Tel Aviv</Text>
                 <ListView

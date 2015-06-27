@@ -69,13 +69,6 @@ class ThemeList extends Component {
     constructor(props) {
         super(props);
         Global.getAllThemes(this.handleResponse.bind(this));
-        if (undefined == tc.user){
-            Parse.User.current().fetch(
-                {success: function(user) {
-                    tc.user = user.attributes
-                }
-                })
-        }
         this.state = {
             isLoading: true
         };

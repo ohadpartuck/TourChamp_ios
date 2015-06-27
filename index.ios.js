@@ -16,6 +16,7 @@ window.Global = Global;
 
 var LoginScreen  = require('./fb_login');
 var LocalStorage = require('./Stores/LocalStorage');
+var UserPage = require('./user_page');
 var UserInfoScreen = require('./Screens/UserInfoScreen');
 var ChallengeList = require('./challenge_list');
 var ChallengeShow = require('./challenge_show');
@@ -34,6 +35,13 @@ var {
 var TourChampIOs = React.createClass({
 
     getInitialState() {
+        if (undefined == tc.user){
+            Parse.User.current().fetch(
+                {success: function(user) {
+                    tc.user = user.attributes
+                }
+                })
+        }
         return {bootstrapped: false}
     },
 
@@ -51,6 +59,8 @@ var TourChampIOs = React.createClass({
                 return <ThemeList navigator={nav} />;
             case 'challenge_list':
                 return <ChallengeList navigator={nav} />;
+            case 'user_page':
+                return <UserPage navigator={nav} />;
             case 'challenge_show':
                 return <ChallengeShow navigator={nav} />;
 
@@ -75,7 +85,8 @@ var TourChampIOs = React.createClass({
             return <View />
         }
         if (Global.is_signed_in()){
-            render_screen = 'theme_list';
+            //render_screen = 'theme_list';
+            render_screen = 'user_page';
         }else{
             render_screen = 'authenticate';
         }

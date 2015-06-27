@@ -12,8 +12,6 @@ var {
     TouchableOpacity,
     } = React;
 
-var LinearGradient = require('react-native-linear-gradient');
-
 var styles = StyleSheet.create({
   container: {
     flex: 1,

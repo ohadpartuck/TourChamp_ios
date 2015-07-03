@@ -83,9 +83,12 @@ class ChallengeShow extends Component {
         super(props);
         var dataSource = new ListView.DataSource(
             {rowHasChanged: (r1, r2) => r1.id !== r2.id});
+
+        //var challenge = this.props.navigator.route.passProps.challenge;
+        var challenge = this.props.challenge;
         this.state = {
             isLoading: false,
-            dataSource: dataSource.cloneWithRows(this.props.navigator.route.passProps.challenge)
+            dataSource: dataSource.cloneWithRows(challenge)
         };
         this.setState({ stam: true
         }); // this will re call the render method
@@ -93,12 +96,14 @@ class ChallengeShow extends Component {
     }
 
     buttonClicked() {
-        Global.mark_challenge_completed(this.props.navigator.route.passProps.challenge);
+        //Global.mark_challenge_completed(this.props.navigator.route.passProps.challenge);
+        Global.mark_challenge_completed(this.props.challenge);
     }
 
     render() {
 
-        var challenge_obj = this.props.navigator.route.passProps.challenge;
+        //var challenge_obj = this.props.navigator.route.passProps.challenge;
+        var challenge_obj = this.props.challenge;
         var challenge = challenge_obj.attributes;
 
         var button;

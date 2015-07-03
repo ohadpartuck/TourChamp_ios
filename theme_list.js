@@ -75,7 +75,7 @@ class ThemeList extends Component {
     }
 
     rowPressed(ThemeId) {
-        var theme = this.props.themes.filter(prop => prop.id === ThemeId)[0];
+        var theme = this.props.themes[ThemeId];
 
         Global.getChallengesForTheme(theme, this.handleChallengesForThemeResponse.bind(this))
     }

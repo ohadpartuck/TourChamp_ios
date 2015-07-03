@@ -68,16 +68,19 @@ class ChallengeList extends Component {
         super(props);
         var dataSource = new ListView.DataSource(
                             {rowHasChanged: (r1, r2) => r1.id !== r2.id});
+        //var challenges = this.props.navigator.route.passProps.challenges;
+        var challenges = this.props.challenges;
         this.state = {
             isLoading: false,
-            dataSource: dataSource.cloneWithRows(this.props.navigator.route.passProps.challenges)
+            dataSource: dataSource.cloneWithRows(challenges)
         };
         this.setState({ stam: true
                         }); // this will re call the render method
     }
 
     rowPressed(challenge_id) {
-        var challenge = this.props.navigator.route.passProps.challenges.filter(prop => prop.id === challenge_id)[0];
+        //var challenge = this.props.navigator.route.passProps.challenges.filter(prop => prop.id === challenge_id)[0];
+        var challenge = this.props.challenges.filter(prop => prop.id === challenge_id)[0];
 
         this.props.navigator.push({
             id: 'challenge_show',

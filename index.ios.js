@@ -36,11 +36,14 @@ var TourChampIOs = React.createClass({
 
     getInitialState() {
         if (undefined == tc.user){
-            Parse.User.current().fetch(
-                {success: function(user) {
-                    tc.user = user.attributes
-                }
-                })
+            if (Global.is_signed_in()) {
+                Parse.User.current().fetch(
+                    {
+                        success: function (user) {
+                            tc.user = user.attributes
+                        }
+                    })
+            }
         }
         return {bootstrapped: false}
     },
@@ -69,12 +72,6 @@ var TourChampIOs = React.createClass({
         }
     },
 
-//<React.NavigatorIOS
-//    style={styles.container}
-//    initialRoute={{
-//        title: 'Tour Champ',
-//        component: FBLogin,
-//    }}/>
 
 
     render: function() {
@@ -85,8 +82,15 @@ var TourChampIOs = React.createClass({
             return <View />
         }
         if (Global.is_signed_in()){
-            //render_screen = 'theme_list';
-            render_screen = 'user_page';
+            return <React.NavigatorIOS
+                style={styles.container}
+                initialRoute={{
+                    title: 'Tour Champ',
+                    component: ThemeList,
+                }}/>;
+
+            render_screen = 'theme_list';
+            //render_screen = 'user_page';
         }else{
             render_screen = 'authenticate';
         }
@@ -100,7 +104,13 @@ var TourChampIOs = React.createClass({
                     }
 
                     return Navigator.SceneConfigs.FloatFromRight;
-                }} />
+                }}
+                onBack={() => {
+                    if (route.index > 0) {
+                        navigator.pop();
+                    }
+                }}
+            />
 
         );
     }

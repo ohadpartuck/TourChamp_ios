@@ -29,18 +29,25 @@ var {
     Navigator,
     Text,
     View,
+    NavigatorIOS,
+    AlertIOS,
     Image
     } = React;
 
 var TourChampIOs = React.createClass({
 
     getInitialState() {
+        var that = this;
+        Global.getAllThemes(null);
+        Global.getAllChallenges(null);
+
         if (undefined == tc.user){
             if (Global.is_signed_in()) {
                 Parse.User.current().fetch(
                     {
                         success: function (user) {
-                            tc.user = user.attributes
+                            Global.initializeUser(user);
+                            that.setState({stam: true})
                         }
                     })
             }
@@ -72,6 +79,14 @@ var TourChampIOs = React.createClass({
         }
     },
 
+    _handleUserDataPress: function() {
+
+        // Get by ref not prop
+        this.refs.nav.push({
+            component: UserPage,
+            title: 'User Page'
+        });
+    },
 
 
     render: function() {
@@ -82,18 +97,21 @@ var TourChampIOs = React.createClass({
             return <View />
         }
         if (Global.is_signed_in()){
-            return <React.NavigatorIOS
+
+            return <NavigatorIOS
                 style={styles.container}
+                ref='nav'
                 initialRoute={{
                     title: 'Tour Champ',
                     component: ThemeList,
+                    rightButtonTitle: tc.user.displayName.split(' ')[0],
+                    onRightButtonPress: this._handleUserDataPress
                 }}/>;
 
-            render_screen = 'theme_list';
-            //render_screen = 'user_page';
         }else{
             render_screen = 'authenticate';
         }
+
         return (
             <Navigator
                 initialRoute={{ id: render_screen}}

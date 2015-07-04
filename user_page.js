@@ -61,14 +61,6 @@ var styles = StyleSheet.create({
         margin: 10,
         opacity: 0.8,
     },
-    aboutButtonText: {
-        fontSize: 18,
-        fontFamily: 'Gill Sans',
-        textAlign: 'center',
-        margin: 10,
-        color: '#efefef',
-        opacity: 0.8,
-    },
     contentContainer: {
         position: 'absolute',
         flex: 1,
@@ -81,9 +73,10 @@ var styles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     profilePicture: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
+        width: 70,
+        height: 70,
+        borderRadius: 10,
+        marginTop: 25,
         alignItems: 'center',
         alignSelf: 'center',
     },
@@ -103,8 +96,8 @@ var styles = StyleSheet.create({
         right: 0,
     },
     thumb: {
-        width: 80,
-        height: 80,
+        width: 50,
+        height: 50,
         marginRight: 10,
         borderRadius: 5
     },
@@ -113,7 +106,7 @@ var styles = StyleSheet.create({
         backgroundColor: '#dddddd'
     },
     title: {
-        fontSize: 25,
+        fontSize: 15,
         fontWeight: 'bold',
         color: 'red'
     },
@@ -126,8 +119,9 @@ var styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white',
         flexDirection: 'row',
-        padding: 15,
-        margin: 2
+        paddingLeft: 50,
+        paddingRight: 50,
+        margin: 0
     },
     location: {
 
@@ -138,6 +132,14 @@ var styles = StyleSheet.create({
     textContainer: {
         flex: 1
     },
+    completed: {
+        fontSize: 20,
+        color: '#000000',
+        fontWeight: 'bold',
+        backgroundColor: 'transparent',
+        marginTop: 15,
+        alignSelf: 'center',
+    }
 });
 
 
@@ -147,9 +149,9 @@ var UserPage = React.createClass({
         Global.getAllChallenges(this.refreshPage.bind(this));
 
         this.state = {
-            isLoading: true
+            isLoading: false
         };
-        return {isLoading: true};
+        return {isLoading: false};
     },
 
     componentDidMount() {
@@ -173,9 +175,6 @@ var UserPage = React.createClass({
                         <Image style={styles.thumb} source={{uri: "http://lorempixel.com/100/100/?rnd="+Math.random()}} />
                         <View  style={styles.textContainer}>
                             <Text style={styles.title}>{data.name}</Text>
-                            <Text style={styles.description}
-                                numberOfLines={4}>{data.description}</Text>
-                            <Text style={styles.location}>{data.location}</Text>
                             <Text style={styles.points}>Points: {data.points}</Text>
                         </View>
                     </View>
@@ -187,11 +186,11 @@ var UserPage = React.createClass({
 
     user_data(){
         var challenges_completed, badges_completed;
+        var dataSource = new ListView.DataSource(
+                {rowHasChanged: (r1, r2) => r1.id !== r2.id}),
+            challenges;
 
         if (tc.user.badages_completed) {
-            var dataSource = new ListView.DataSource(
-                    {rowHasChanged: (r1, r2) => r1.id !== r2.id}),
-                challenges;
             challenges = dataSource.cloneWithRows(Object.keys(tc.user.badages_completed));
 
             badges_completed =
@@ -204,9 +203,6 @@ var UserPage = React.createClass({
         }
 
         if (tc.user.challenges_completed) {
-            var dataSource = new ListView.DataSource(
-                    {rowHasChanged: (r1, r2) => r1.id !== r2.id}),
-                challenges;
             challenges = dataSource.cloneWithRows(Object.keys(tc.user.challenges_completed));
 
             challenges_completed =
@@ -221,36 +217,48 @@ var UserPage = React.createClass({
         return {'badges_completed': badges_completed, 'challenges_completed': challenges_completed}
     },
 
+    logOut(){
+        Global.logOut();
+        this.setState({isLoading:  false});
+    },
+
     render() {
 
-       var user_data = this.user_data();
+        var user_data = this.user_data();
 
         var spinner = this.state.isLoading ?
             ( <ActivityIndicatorIOS
                 hidden='false'
                 size='large'/> ) :
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
+            <View style={styles.contentContainer}>
+                <Image source={{uri: tc.user.avatar_url}}
+                style={styles.profilePicture} />
+                <Text style={styles.name}>
                     {tc.user.displayName}
                 </Text>
                 <Text>
                     Points: {tc.user.points}
                 </Text>
+                <TouchableHighlight onPress={this.logOut.bind(this)}>
+                    <Text style={styles.welcome}>
+                        Log out
+                    </Text>
+                </TouchableHighlight>
 
-                <Text style={styles.welcome}>
+                <Text style={styles.completed}>
                     Completed Badges
                 </Text>
                 {user_data['badges_completed']}
 
 
-                <Text style={styles.welcome}>
-                      Completed Challenges
+                <Text style={styles.completed}>
+                    Completed Challenges
                 </Text>
                 {user_data['challenges_completed']}
 
             </View>;
 
-        return ( <View style={styles.container}>{spinner}</View>);
+        return ( <ScrollView>{spinner}</ScrollView>);
     }
 });
 

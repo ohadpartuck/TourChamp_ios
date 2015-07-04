@@ -69,13 +69,14 @@ class ThemeList extends Component {
     constructor(props) {
         super(props);
         Global.getAllThemes(this.handleResponse.bind(this));
+        Global.getAllChallenges();
         this.state = {
             isLoading: true
         };
     }
 
     rowPressed(ThemeId) {
-        var theme = this.props.themes[ThemeId];
+        var theme = tc.allThemes[ThemeId];
 
         Global.getChallengesForTheme(theme, this.handleChallengesForThemeResponse.bind(this))
     }
@@ -124,6 +125,7 @@ class ThemeList extends Component {
         this.setState({isLoading:  false});
     }
 
+
     render() {
         console.log(this.state.isLoading);
 
@@ -132,20 +134,9 @@ class ThemeList extends Component {
                 hidden='false'
                 size='large'/> ) :
             ( <View style={styles.container}>
-                <View style={styles.contentContainer}>
-                    <Image source={{uri: tc.user.avatar_url}}
-                        style={styles.profilePicture} />
-                    <Text style={styles.name}>
-                        {tc.user.displayName}
-                    </Text>
-                    <TouchableHighlight onPress={this.logOut.bind(this)}>
-                        <Text style={styles.welcome}>
-                            Log out
-                        </Text>
-                    </TouchableHighlight>
-                </View>
                 <Text style={styles.headline}>Badges to acheive near Tel Aviv</Text>
                 <ListView
+                    automaticallyAdjustContentInsets={false}
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow.bind(this)}/>
             </View>);

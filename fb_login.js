@@ -1,7 +1,4 @@
 'use strict';
-//var React = require('react-native');
-//var Parse = require('parse').Parse;
-//Parse.initialize("mWYkCl2OixqTNVogAN8QwSWJvz7R0ll7hWYyJs3P", "YBIy6ufbozlkSeGbbVzTQUOBUF20IhmYuGuPQjFx");
 
 var {
     AppRegistry,
@@ -165,7 +162,7 @@ var FacebookLogin = React.createClass({
     Parse.User.logIn(fb_user.id, password).then(function(user) {
       console.log('here in logged_in');
       tc.user = user.attributes;
-      //Global.setUser(user);
+      Global.initializeUser(user);
       that.setState({result: 'logged_in', user: user.attributes});
     }, function(msg) {
       that.setState({result: 'failure logged_id'});
@@ -173,6 +170,10 @@ var FacebookLogin = React.createClass({
   },
 
   user_existed(error_message){
+    if (undefined == error_message){
+      console.log('error');
+      return false;
+    }
     return error_message.includes("already taken");
   },
 

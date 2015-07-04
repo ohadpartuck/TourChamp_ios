@@ -79,8 +79,7 @@ class ChallengeList extends Component {
     }
 
     rowPressed(challenge_id) {
-        //var challenge = this.props.navigator.route.passProps.challenges.filter(prop => prop.id === challenge_id)[0];
-        var challenge = this.props.challenges.filter(prop => prop.id === challenge_id)[0];
+        var challenge = tc.allChallenges[challenge_id];
 
         this.props.navigator.push({
             id: 'challenge_show',
@@ -122,15 +121,14 @@ class ChallengeList extends Component {
                 size='large'/> ) :
             ( <View style={styles.container}>
                 <ListView
+                    automaticallyAdjustContentInsets={false}
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow.bind(this)}/>
             </View>);
 
         return ( <ScrollView>{spinner}</ScrollView>);
     }
-
 }
-
 
 module.exports = ChallengeList;
 

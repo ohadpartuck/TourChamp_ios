@@ -163,7 +163,8 @@ var FacebookLogin = React.createClass({
       console.log('here in logged_in');
       tc.user = user.attributes;
       Global.initializeUser(user);
-      that.setState({result: 'logged_in', user: user.attributes});
+      that.props.navigator.replace({id: 'theme_list'});
+      //that.setState({result: 'logged_in', user: user.attributes});
     }, function(msg) {
       that.setState({result: 'failure logged_id'});
     });
@@ -178,7 +179,7 @@ var FacebookLogin = React.createClass({
   },
 
   render() {
-    console.log('here in fb_login render');
+
     return (
         <View style={styles.container}>
            <TouchableHighlight onPress={this.login}>

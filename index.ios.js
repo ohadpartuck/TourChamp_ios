@@ -67,13 +67,6 @@ var TourChampIOs = React.createClass({
                 return <LoginScreen navigator={nav} />;
             case 'theme_list':
                 return <ThemeList navigator={nav} />;
-            case 'challenge_list':
-                return <ChallengeList navigator={nav} />;
-            case 'user_page':
-                return <UserPage navigator={nav} />;
-            case 'challenge_show':
-                return <ChallengeShow navigator={nav} />;
-
             default:
                 return <View />;
         }
@@ -84,7 +77,7 @@ var TourChampIOs = React.createClass({
         // Get by ref not prop
         this.refs.nav.push({
             component: UserPage,
-            title: 'User Page'
+            title: 'Achievements'
         });
     },
 
@@ -110,6 +103,13 @@ var TourChampIOs = React.createClass({
 
         }else{
             render_screen = 'authenticate';
+            //return <NavigatorIOS
+            //    style={styles.container}
+            //    ref='nav'
+            //    initialRoute={{
+            //        title: 'Login',
+            //        component: LoginScreen,
+            //    }}/>;
         }
 
         return (

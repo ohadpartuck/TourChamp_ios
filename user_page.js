@@ -219,6 +219,7 @@ var UserPage = React.createClass({
 
     logOut(){
         Global.logOut();
+        this.props.navigator.pop();
         this.setState({isLoading:  false});
     },
 
@@ -239,7 +240,9 @@ var UserPage = React.createClass({
                 <Text>
                     Points: {tc.user.points}
                 </Text>
-                <TouchableHighlight onPress={this.logOut.bind(this)}>
+                <TouchableHighlight
+                    ref='nav'
+                    onPress={this.logOut.bind(this)}>
                     <Text style={styles.welcome}>
                         Log out
                     </Text>

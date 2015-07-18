@@ -8,14 +8,17 @@ var {
     View,
     TouchableHighlight,
     TouchableOpacity,
+    Image
     } = React;
+
+var LinearGradient = require('react-native-linear-gradient');
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    //backgroundColor: '#F5FCFF',
   },
   background: {
     position: 'absolute',
@@ -27,7 +30,7 @@ var styles = StyleSheet.create({
   linearGradient: {
     paddingLeft: 15,
     paddingRight: 15,
-    borderRadius: 5,
+    borderRadius: 5
   },
   backgroundOverlay: {
     opacity: 0.5,
@@ -52,28 +55,9 @@ var styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Gill Sans',
     textAlign: 'center',
-    color: '#ffffff',
     margin: 10,
+    color: 'black',
     opacity: 0.8,
-  },
-  aboutButtonText: {
-    fontSize: 18,
-    fontFamily: 'Gill Sans',
-    textAlign: 'center',
-    margin: 10,
-    color: '#efefef',
-    opacity: 0.8,
-  },
-  contentContainer: {
-    position: 'absolute',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    backgroundColor: 'transparent',
   },
   profilePicture: {
     width: 50,
@@ -100,6 +84,14 @@ var styles = StyleSheet.create({
   aboutTitle: {
     fontSize: 20,
     marginBottom: 10,
+  },
+  bgImageWrapper: {
+    position: 'absolute',
+    top: 20, bottom: 10, left: 10, right: 10
+  },
+  bgImage: {
+    flex: 1,
+    resizeMode: "stretch"
   },
 });
 
@@ -182,20 +174,33 @@ var FacebookLogin = React.createClass({
     return error_message.includes("already taken");
   },
 
+
+
   render() {
 
     return (
-        <View style={styles.container}>
-           <TouchableHighlight onPress={this.login}>
-               <Text style={styles.welcome}>
-                   Facebook Login
-                 </Text>
-             </TouchableHighlight>
 
-          <Text style={styles.instructions}>
-            {this.state.result}
-          </Text>
+        <View style={styles.container}>
+          <View style={styles.bgImageWrapper}>
+            <Image source={{uri: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Shahar_Pe'er_Israel_tennis_championship_2008.jpg"}} style={styles.bgImage} />
+          </View>
+          <View style={{backgroundColor: 'transparent'}}>
+            <TouchableHighlight onPress={this.login}>
+              <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={{
+                paddingLeft: 15,
+                paddingRight: 15,
+                borderRadius: 5
+              }}>
+                <Text style={styles.buttonText}>
+                  Sign in with Facebook
+                </Text>
+              </LinearGradient>
+            </TouchableHighlight>
+          </View>
+
         </View>
+
+
     );
   }
 });

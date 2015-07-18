@@ -23,10 +23,6 @@ window.Global = Global;
 var LoginScreen  = require('./fb_login');
 var LocalStorage = require('./Stores/LocalStorage');
 var UserPage = require('./user_page');
-var UserInfoScreen = require('./Screens/UserInfoScreen');
-var ChallengeList = require('./challenge_list');
-var ChallengeShow = require('./challenge_show');
-var UserStore = require('./Stores/UserStore');
 var ThemeList  = require('./theme_list');
 
 var {

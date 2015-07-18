@@ -9,6 +9,7 @@ var {
     ActivityIndicatorIOS,
     ListView,
     Text,
+    AlertIOS,
     Component
     } = React;
 
@@ -79,25 +80,14 @@ var styles = StyleSheet.create({
 
 class ChallengeShow extends Component {
 
-    //constructor(props) {
-    //    super(props);
-    //    var dataSource = new ListView.DataSource(
-    //        {rowHasChanged: (r1, r2) => r1.id !== r2.id});
-    //
-    //    //var challenge = this.props.navigator.route.passProps.challenge;
-    //    var challenge = this.props.challenge;
-    //    this.state = {
-    //        isLoading: false,
-    //        dataSource: dataSource.cloneWithRows(challenge)
-    //    };
-    //    this.setState({ stam: true
-    //    }); // this will re call the render method
-    //
-    //}
-
     buttonClicked() {
-        //Global.mark_challenge_completed(this.props.navigator.route.passProps.challenge);
-        Global.mark_challenge_completed(this.props.challenge);
+        Global.mark_challenge_completed(this.props.challenge, this.reRenderPage.bind(this));
+        var points = this.props.challenge.attributes.points;
+        AlertIOS.alert('Great Job!', 'Another '+points+' points, in the bag!', [{text: 'Ok', onPress: () => p('Confirmed points granted')}]);
+    }
+
+    reRenderPage(){
+        this.setState({stam: 'stam'});
     }
 
     render() {
@@ -108,17 +98,17 @@ class ChallengeShow extends Component {
 
         var button;
         if (Global.is_challenge_completed(challenge_obj.id)) {
-            button = <TouchableHighlight
-                style={styles.completed_button}>
-                <Text style={styles.mark_as_done_button_text}>Challenge Completed! ({challenge.points} points)</Text>
-            </TouchableHighlight>
+            button = <View
+                        style={styles.completed_button}>
+                        <Text style={styles.mark_as_done_button_text}>Challenge Completed! ({challenge.points} points)</Text>
+                    </View>
 
         }else{
             button = <TouchableHighlight
-                style={styles.mark_as_done_button}
-                onPress={this.buttonClicked.bind(this)}>
-                <Text style={styles.mark_as_done_button_text}>Mark As Done! ({challenge.points} points)</Text>
-            </TouchableHighlight>
+                        style={styles.mark_as_done_button}
+                        onPress={this.buttonClicked.bind(this)}>
+                        <Text style={styles.mark_as_done_button_text}>Mark As Done! ({challenge.points} points)</Text>
+                    </TouchableHighlight>
         }
 
         return (

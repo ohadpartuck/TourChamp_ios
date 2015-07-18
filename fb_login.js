@@ -164,11 +164,9 @@ var FacebookLogin = React.createClass({
   login_user(fb_user, password){
     var that = this;
     Parse.User.logIn(fb_user.id, password).then(function(user) {
-      console.log('here in logged_in');
       tc.user = user.attributes;
       Global.initializeUser(user);
       that.props.navigator.pop();
-      //that.props.navigator.replace({id: 'theme_list'});
       that.setState({result: 'logged_in', user: user.attributes});
       that.props.props.events.emit('fb_login_success', { someArg: 'argValue' });
     }, function(msg) {

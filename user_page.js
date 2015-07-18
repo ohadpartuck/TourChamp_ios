@@ -15,40 +15,12 @@ var {
 
 
 var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
     background: {
         position: 'absolute',
         top: 0,
         left: 0,
         right: 0,
         bottom: 0,
-    },
-    linearGradient: {
-        paddingLeft: 15,
-        paddingRight: 15,
-        borderRadius: 5,
-    },
-    backgroundOverlay: {
-        opacity: 0.5,
-        backgroundColor: '#ffffff',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-    },
-    backgroundVideo: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
     },
     loginContainer: {
         backgroundColor: 'transparent',
@@ -75,18 +47,19 @@ var styles = StyleSheet.create({
     profilePicture: {
         width: 70,
         height: 70,
-        borderRadius: 10,
-        marginTop: 25,
-        alignItems: 'center',
-        alignSelf: 'center',
+        borderRadius: 30,
+        marginTop: 10,
+        marginLeft: 10,
+        alignSelf: 'flex-start',
     },
     name: {
         fontSize: 20,
+        marginLeft: 10,
+        alignSelf: 'flex-start',
         color: '#000000',
         fontWeight: 'bold',
         backgroundColor: 'transparent',
         marginTop: 15,
-        alignSelf: 'center',
     },
     footer: {
         position: 'absolute',
@@ -104,6 +77,14 @@ var styles = StyleSheet.create({
     separator: {
         height: 1,
         backgroundColor: '#dddddd'
+    },
+    logOut:{
+        marginLeft: 10,
+        alignSelf: 'flex-start',
+
+    },
+    logOutText:{
+        color: '#2896dd',
     },
     title: {
         fontSize: 15,
@@ -127,7 +108,10 @@ var styles = StyleSheet.create({
 
     },
     points: {
-        flex: 1
+        flex: 1,
+        marginLeft: 10,
+        alignSelf: 'flex-start',
+
     },
     textContainer: {
         flex: 1
@@ -139,6 +123,7 @@ var styles = StyleSheet.create({
         backgroundColor: 'transparent',
         marginTop: 15,
         alignSelf: 'center',
+        marginBottom: 0,
     }
 });
 
@@ -151,6 +136,7 @@ var UserPage = React.createClass({
         this.state = {
             isLoading: false
         };
+
         return {isLoading: false};
     },
 
@@ -169,18 +155,16 @@ var UserPage = React.createClass({
     renderRow(challenge_id, sectionID, rowID) {
         var data = tc.allChallenges[challenge_id].attributes;
         return (
-            <TouchableHighlight underlayColor='#dddddd'>
-                <View>
-                    <View style={styles.rowContainer}>
-                        <Image style={styles.thumb} source={{uri: "http://lorempixel.com/100/100/?rnd="+Math.random()}} />
-                        <View  style={styles.textContainer}>
-                            <Text style={styles.title}>{data.name}</Text>
-                            <Text style={styles.points}>Points: {data.points}</Text>
-                        </View>
+            <View>
+                <View style={styles.rowContainer}>
+                    <Image style={styles.thumb} source={{uri: "http://lorempixel.com/100/100/?rnd="+Math.random()}} />
+                    <View  style={styles.textContainer}>
+                        <Text style={styles.title}>{data.name}</Text>
+                        <Text style={styles.points}>Points: {data.points}</Text>
                     </View>
-                    <View style={styles.separator}/>
                 </View>
-            </TouchableHighlight>
+                <View style={styles.separator}/>
+            </View>
         );
     },
 
@@ -220,7 +204,9 @@ var UserPage = React.createClass({
     logOut(){
         Global.logOut();
         this.props.navigator.pop();
+        //this.props.navigator.replace({id: 'authenticate'});
         this.setState({isLoading:  false});
+        this.props.route.props.events.emit('logout_success', { someArg: 'argValue' });
     },
 
     render() {
@@ -237,13 +223,14 @@ var UserPage = React.createClass({
                 <Text style={styles.name}>
                     {tc.user.displayName}
                 </Text>
-                <Text>
+                <Text style={styles.points}>
                     Points: {tc.user.points}
                 </Text>
                 <TouchableHighlight
+                    style={styles.logOut}
                     ref='nav'
                     onPress={this.logOut.bind(this)}>
-                    <Text style={styles.welcome}>
+                    <Text style={styles.logOutText}>
                         Log out
                     </Text>
                 </TouchableHighlight>

@@ -79,21 +79,21 @@ var styles = StyleSheet.create({
 
 class ChallengeShow extends Component {
 
-    constructor(props) {
-        super(props);
-        var dataSource = new ListView.DataSource(
-            {rowHasChanged: (r1, r2) => r1.id !== r2.id});
-
-        //var challenge = this.props.navigator.route.passProps.challenge;
-        var challenge = this.props.challenge;
-        this.state = {
-            isLoading: false,
-            dataSource: dataSource.cloneWithRows(challenge)
-        };
-        this.setState({ stam: true
-        }); // this will re call the render method
-
-    }
+    //constructor(props) {
+    //    super(props);
+    //    var dataSource = new ListView.DataSource(
+    //        {rowHasChanged: (r1, r2) => r1.id !== r2.id});
+    //
+    //    //var challenge = this.props.navigator.route.passProps.challenge;
+    //    var challenge = this.props.challenge;
+    //    this.state = {
+    //        isLoading: false,
+    //        dataSource: dataSource.cloneWithRows(challenge)
+    //    };
+    //    this.setState({ stam: true
+    //    }); // this will re call the render method
+    //
+    //}
 
     buttonClicked() {
         //Global.mark_challenge_completed(this.props.navigator.route.passProps.challenge);

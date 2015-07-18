@@ -6,10 +6,16 @@ var Parse = require('parse').Parse;
 Parse.initialize("mWYkCl2OixqTNVogAN8QwSWJvz7R0ll7hWYyJs3P", "YBIy6ufbozlkSeGbbVzTQUOBUF20IhmYuGuPQjFx");
 var tc = {};
 //global variables
+var EventEmitter = require('EventEmitter');
+var Subscribable = require('Subscribable');
 
 window.React = React;
 window.Parse = Parse;
 window.tc = tc;
+window.p = function(msg){ console.log(msg)};
+window.EventEmitter = EventEmitter;
+window.Subscribable = Subscribable;
+
 //window._ = _;
 var Global = require('./lib/global');
 window.Global = Global;
@@ -30,11 +36,13 @@ var {
     Text,
     View,
     NavigatorIOS,
+    TouchableHighlight,
     AlertIOS,
     Image
     } = React;
 
 var TourChampIOs = React.createClass({
+    mixins: [Subscribable.Mixin],
 
     getInitialState() {
         var that = this;
@@ -56,19 +64,38 @@ var TourChampIOs = React.createClass({
     },
 
     componentWillMount() {
+        this.eventEmitter = new EventEmitter();
 
         LocalStorage.bootstrap(() => this.setState({bootstrapped: true}));
     },
 
+    componentDidMount() {
+        this.addListenerOn(this.eventEmitter, 'fb_login_success',  this.fbLoginCallback);
+        this.addListenerOn(this.eventEmitter, 'logout_success',  this.logoutCallback);
+    },
+
+    fbLoginCallback(args){
+        p('facebook login callback');
+        this.setState({
+            stam: args.someArg
+        });
+    },
+
+    logoutCallback(args){
+        p('logout callback');
+        this.setState({
+            stam: args.someArg
+        });
+    },
+
+
     renderScene(route, nav) {
-        console.log('in renderScene');
+        p('in renderScene');
         switch (route.id) {
             case 'authenticate':
-                return <LoginScreen navigator={nav} />;
-            case 'theme_list':
-                return <ThemeList navigator={nav} />;
+                return <LoginScreen navigator={nav} props= {{events: this.eventEmitter}}/>;
             default:
-                return <View />;
+                return  <View>Error</View>;
         }
     },
 
@@ -77,14 +104,15 @@ var TourChampIOs = React.createClass({
         // Get by ref not prop
         this.refs.nav.push({
             component: UserPage,
-            title: 'Achievements'
+            title: 'Achievements',
+            props: {events: this.eventEmitter}
         });
     },
 
 
     render: function() {
         var render_screen;
-        console.log('here in index render');
+        p('index render');
 
         if (this.state.bootstrapped === false) {
             return <View />
@@ -98,18 +126,14 @@ var TourChampIOs = React.createClass({
                     title: 'Tour Champ',
                     component: ThemeList,
                     rightButtonTitle: tc.user.displayName.split(' ')[0],
-                    onRightButtonPress: this._handleUserDataPress
+                    onRightButtonPress: this._handleUserDataPress ,
+                    passProps: {
+                        events: this.eventEmitter
+                    }
                 }}/>;
 
         }else{
             render_screen = 'authenticate';
-            //return <NavigatorIOS
-            //    style={styles.container}
-            //    ref='nav'
-            //    initialRoute={{
-            //        title: 'Login',
-            //        component: LoginScreen,
-            //    }}/>;
         }
 
         return (

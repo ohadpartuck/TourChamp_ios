@@ -55,43 +55,48 @@ var styles = StyleSheet.create({
         margin: 2,
         borderRadius: 5
     },
-    profilePicture: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-        alignItems: 'center',
-        alignSelf: 'center',
-    },
 });
 
-class ThemeList extends Component {
+var ThemeList = React.createClass({
+    mixins: [Subscribable.Mixin],
 
-    constructor(props) {
-        super(props);
-        Global.getAllThemes(this.handleResponse.bind(this));
+    getInitialState() {
+
+        //super(props);
+        // time out to avoid a race condition
+        // this.handleResponse counts on this.state which is the output of this function
+        var that = this;
+        setTimeout( function(){
+                Global.getAllThemes(that.handleResponse.bind(that))
+            }, 1000);
         Global.getAllChallenges();
-        this.state = {
+        return {
             isLoading: true
         };
-    }
+    },
 
-    rowPressed(ThemeId) {
+    componentDidMount() {
+
+    },
+
+
+    rowPressed: function(ThemeId) {
         var theme = tc.allThemes[ThemeId];
 
         Global.getChallengesForTheme(theme, this.handleChallengesForThemeResponse.bind(this))
-    }
+    },
 
-    handleChallengesForThemeResponse(theme, challenges){
+    handleChallengesForThemeResponse: function(theme, challenges){
         this.props.navigator.push({
             id: 'challenge_list',
             title: "Challenges For " + theme.attributes.badge,
             component: ChallengeList,
             passProps: {theme: theme, challenges: challenges}
         });
-    }
+    },
 
 
-    renderRow(rowData, sectionID, rowID) {
+    renderRow: function(rowData, sectionID, rowID) {
         return (
             <TouchableHighlight onPress={() => this.rowPressed(rowData.id)}
                 underlayColor='#dddddd'>
@@ -108,25 +113,25 @@ class ThemeList extends Component {
                 </View>
             </TouchableHighlight>
         );
-    }
+    },
 
-    handleResponse(response) {
+    handleResponse: function(response) {
         this.setState({isLoading:  false}); // this will re call the render method
         this.state.isLoading = false;
         var dataSource = new ListView.DataSource(
             {rowHasChanged: (r1, r2) => r1.guid !== r2.guid});
         this.state.dataSource = dataSource.cloneWithRows(response);
         this.props.themes = response;
-    }
+    },
 
-    logOut(){
+    logOut: function(){
         Parse.User.logOut();
         // TODO go back to login page
         this.setState({isLoading:  false});
-    }
+    },
 
 
-    render() {
+    render: function() {
         console.log(this.state.isLoading);
 
         var spinner = this.state.isLoading ?
@@ -143,7 +148,7 @@ class ThemeList extends Component {
 
         return ( <ScrollView>{spinner}</ScrollView>);
     }
-}
+});
 
 module.exports = ThemeList;
 

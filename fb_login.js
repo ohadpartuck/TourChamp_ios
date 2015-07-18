@@ -1,5 +1,6 @@
 'use strict';
 
+
 var {
     AppRegistry,
     StyleSheet,
@@ -115,6 +116,9 @@ var FacebookLogin = React.createClass({
     var self = this;
   },
 
+  componentWillMount: function() {
+  },
+
   login() {
     var that = this;
     FacebookLoginManager.newSession((error, info) => {
@@ -163,8 +167,10 @@ var FacebookLogin = React.createClass({
       console.log('here in logged_in');
       tc.user = user.attributes;
       Global.initializeUser(user);
-      that.props.navigator.replace({id: 'theme_list'});
-      //that.setState({result: 'logged_in', user: user.attributes});
+      that.props.navigator.pop();
+      //that.props.navigator.replace({id: 'theme_list'});
+      that.setState({result: 'logged_in', user: user.attributes});
+      that.props.props.events.emit('fb_login_success', { someArg: 'argValue' });
     }, function(msg) {
       that.setState({result: 'failure logged_id'});
     });

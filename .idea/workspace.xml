@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6e58763-44b7-4b13-96ff-f940624b49af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iOS/AppDelegate.m" afterPath="$PROJECT_DIR$/iOS/AppDelegate.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iOS/Base.lproj/LaunchScreen.xib" afterPath="$PROJECT_DIR$/iOS/Base.lproj/LaunchScreen.xib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native/Examples/SampleApp/iOS/Base.lproj/LaunchScreen.xib" afterPath="$PROJECT_DIR$/node_modules/react-native/Examples/SampleApp/iOS/Base.lproj/LaunchScreen.xib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fb_login.js" afterPath="$PROJECT_DIR$/fb_login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.ios.js" afterPath="$PROJECT_DIR$/index.ios.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iOS/main.jsbundle" afterPath="$PROJECT_DIR$/iOS/main.jsbundle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TourChamp_ios.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/TourChamp_ios.xcodeproj/project.pbxproj" />
     </list>
     <ignored path="TourChamp_ios.iws" />
     <ignored path=".idea/workspace.xml" />

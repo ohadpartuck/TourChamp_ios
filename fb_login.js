@@ -171,7 +171,14 @@ var FacebookLogin = React.createClass({
       console.log('error');
       return false;
     }
-    return error_message.includes("already taken");
+    try {
+      return error_message.includes("already taken");
+    }catch(err){
+      p('123123');
+      p(error_message);
+      //TODO report error
+       return true;
+    }
   },
 
 

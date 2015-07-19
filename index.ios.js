@@ -105,6 +105,16 @@ var TourChampIOs = React.createClass({
         });
     },
 
+    _handleAboutPress: function() {
+
+        // Get by ref not prop
+        this.refs.nav.push({
+            component: AboutPage,
+            title: 'About Me',
+            props: {events: this.eventEmitter}
+        });
+    },
+
 
     render: function() {
         var render_screen;
